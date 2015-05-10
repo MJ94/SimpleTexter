@@ -12,6 +12,10 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 
 public class ResultsActivity extends ActionBarActivity {
 
@@ -23,10 +27,14 @@ public class ResultsActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
-
+        List<String> userDefinedMessages = new ArrayList<String>(); // get user defined messages from somewhere
+        List<String> predefinedMessages = Arrays.asList(getResources().getStringArray(R.array.predefined_messages));
+        List<String> finalMessagesList = new ArrayList<String>();
+        finalMessagesList.addAll(userDefinedMessages);
+        finalMessagesList.addAll(predefinedMessages);
         txtCustomText = (EditText) findViewById(R.id.txtCustom);
         spinner = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, finalMessagesList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
@@ -43,7 +51,7 @@ public class ResultsActivity extends ActionBarActivity {
                         smsBody = "How are you?";
                         break;
                     case 3:
-                        smsBody = "On my way!";
+                        smsBody = "I'm on my way!";
                         break;
                     case 4:
                         smsBody = "I can't talk right now.";
