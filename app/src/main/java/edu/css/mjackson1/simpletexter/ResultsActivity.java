@@ -72,7 +72,7 @@ public class ResultsActivity extends ActionBarActivity {
         Intent receiverIntent = getIntent();
         String receiver = receiverIntent.getExtras().getString("receiver");
 
-        if(!txtCustomText.getText().equals("")) {
+        if(!txtCustomText.getText().toString().trim().equals("")){
             smsBody = txtCustomText.getText().toString();
         }
 

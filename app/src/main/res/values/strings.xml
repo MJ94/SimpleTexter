@@ -6,7 +6,7 @@
     <string name="title_activity_results">Results Activity</string>
     <string name="michaelText">Send Michael a Text</string>
     <string name="tomText">Send Tom a Text</string>
-    <string name="mickText">Send Mick a Text></string>
+    <string name="mickText">Send Mick a Text</string>
 
     <string-array name="intents">
         <item>"Fast SMS"</item>
