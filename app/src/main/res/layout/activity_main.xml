@@ -20,6 +20,19 @@
             android:layout_alignParentStart="true"
             android:src="@mipmap/mj" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Michael"
+            android:id="@+id/tvMichael"
+            android:textColor="#ff070707"
+            android:textSize="20dp"
+            android:layout_below="@+id/imageView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/imageView"
+            android:layout_alignEnd="@+id/imageView" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,25 +42,55 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/imageView"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:onClick="onClickMichael" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView2"
+            android:layout_marginTop="32dp"
             android:src="@mipmap/tg"
-            android:layout_centerVertical="true"
+            android:layout_below="@+id/tvMichael"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tom"
+            android:id="@+id/tvTom"
+            android:layout_below="@+id/imageView2"
+            android:layout_alignRight="@+id/imageView2"
+            android:layout_alignEnd="@+id/imageView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="20dp"
+            android:textColor="#ff010101" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView3"
             android:src="@mipmap/mick"
-            android:layout_alignBottom="@+id/btnMick"
+            android:layout_marginTop="29dp"
+            android:layout_below="@+id/tvTom"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mick"
+            android:id="@+id/tvMick"
+            android:layout_below="@+id/imageView3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="20dp"
+            android:textColor="#ff010101"
+            android:layout_alignRight="@+id/imageView3"
+            android:layout_alignEnd="@+id/imageView3" />
 
         <Button
             android:layout_width="wrap_content"
@@ -58,19 +101,22 @@
             android:layout_marginTop="23dp"
             android:layout_toRightOf="@+id/imageView2"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:onClick="onClickTom"
+            android:clickable="true" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/mickText"
             android:id="@+id/btnMick"
-            android:layout_below="@+id/imageView2"
+            android:layout_above="@+id/tvMick"
+            android:layout_toRightOf="@+id/imageView3"
+            android:layout_marginBottom="22dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="125dp"
-            android:layout_toRightOf="@+id/imageView3"
-            android:layout_toEndOf="@+id/imageView3" />
+            android:clickable="true"
+            android:onClick="onClickMick" />
     </RelativeLayout>
 
 </RelativeLayout>

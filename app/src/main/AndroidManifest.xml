@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.css.mjackson1.simpletexter" >
 
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".results"
+            android:name=".ResultsActivity"
             android:label="@string/title_activity_results" >
         </activity>
     </application>
