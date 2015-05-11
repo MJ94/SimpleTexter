@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -71,27 +72,22 @@ public class ResultsActivity extends ActionBarActivity {
         Intent receiverIntent = getIntent();
         String receiver = receiverIntent.getExtras().getString("receiver");
 
-        if(txtCustomText.toString() != ""){
-            smsBody = txtCustomText.toString();
+        if(!txtCustomText.getText().equals("")) {
+            smsBody = txtCustomText.getText().toString();
         }
 
-        if (receiver == "Michael") {
-            Intent sendIntent = new Intent(Intent.ACTION_VIEW);
-            sendIntent.setData(Uri.parse("sms:2185911674"));
-            sendIntent.putExtra("sms_body", smsBody);
-            startActivity(sendIntent);
+        if (receiver.equals("Michael")) {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage("2185911674", null, smsBody, null, null);
+
         }
-        if (receiver == "Tom") {
-            Intent sendIntent = new Intent(Intent.ACTION_VIEW);
-            sendIntent.setData(Uri.parse("sms:2185911674"));
-            sendIntent.putExtra("sms_body", smsBody);
-            startActivity(sendIntent);
+        if (receiver.equals("Tom")) {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage("2185911674", null, smsBody, null, null);
         }
-        if (receiver == "Mick") {
-            Intent sendIntent = new Intent(Intent.ACTION_VIEW);
-            sendIntent.setData(Uri.parse("sms:2185911674"));
-            sendIntent.putExtra("sms_body", smsBody);
-            startActivity(sendIntent);
+        if (receiver.equals("Mick")) {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage("2185911674", null, smsBody, null, null);
         }
 
         Intent a = new Intent(this, MainActivity.class);
